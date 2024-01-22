@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./App.css";
 
 function App() {
   const [todos, setTodos] = useState([
@@ -19,7 +20,9 @@ function App() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
+  // 제목
   const onChangeTitleHAndler = (event) => setTitle(event.target.value);
+  // 내용
   const onChangeContentHAndler = (event) => setContent(event.target.value);
 
   // 추가하기 버튼
@@ -34,7 +37,7 @@ function App() {
     setTodos([...todos, newTodo]);
     setTitle("");
     setContent("");
-    event.preventDefault();
+    event.preventDefault(); // 페이지 리로드 방지
   };
 
   // 삭제하기 버튼
@@ -70,12 +73,12 @@ function App() {
   return (
     <div className="layout">
       <header>
-        <div>JiYoung's To Do List</div>
+        <div>JiYoung's To Do List 📝</div>
         <div>React</div>
       </header>
 
-      <form>
-        <div>
+      <form className="submit-container">
+        <div className="input-container">
           제목
           <input type="text" value={title} onChange={onChangeTitleHAndler} />
           내용
@@ -85,50 +88,74 @@ function App() {
             onChange={onChangeContentHAndler}
           />
         </div>
-        <button onClick={clickAddBtn}>추가하기</button>
+        <button className="add-btn" onClick={clickAddBtn}>
+          추가하기
+        </button>
       </form>
 
-      <div>
-        <div>
+      <div className="list-container">
+        <div className="list-wrapper">
           <h2>Working..🔥</h2>
-          {todos.map((todo) => {
-            if (todo.isDone === false) {
-              return (
-                <div key={todo.id}>
-                  {todo.title} <br />
-                  {todo.content} <br />
-                  <button onClick={() => clickDeleteBtn(todo.id)}>
-                    삭제하기
-                  </button>
-                  <button onClick={() => clickCompleteBtn(todo.id)}>
-                    완료
-                  </button>
-                </div>
-              );
-            } else {
-              return null;
-            }
-          })}
+          <ul className="todo-list">
+            {todos.map((todo) => {
+              if (todo.isDone === false) {
+                return (
+                  <li className="todo-item" key={todo.id}>
+                    <h3>{todo.title}</h3>
+                    <p>{todo.content}</p>
+                    <div className="btn-set">
+                      <button
+                        className="delete-btn"
+                        onClick={() => clickDeleteBtn(todo.id)}
+                      >
+                        삭제하기
+                      </button>
+                      <button
+                        className="complete-btn"
+                        onClick={() => clickCompleteBtn(todo.id)}
+                      >
+                        완료
+                      </button>
+                    </div>
+                  </li>
+                );
+              } else {
+                return null;
+              }
+            })}
+          </ul>
         </div>
 
-        <div>
+        <div className="list-wrapper">
           <h2>Done..!🎉</h2>
-          {todos.map((todo) => {
-            if (todo.isDone === true) {
-              return (
-                <div key={todo.id}>
-                  {todo.title} <br />
-                  {todo.content} <br />
-                  <button onClick={() => clickDeleteBtn(todo.id)}>
-                    삭제하기
-                  </button>
-                  <button onClick={() => clickCancelBtn(todo.id)}>취소</button>
-                </div>
-              );
-            } else {
-              return null;
-            }
-          })}
+          <ul className="todo-list">
+            {todos.map((todo) => {
+              if (todo.isDone === true) {
+                return (
+                  <li className="todo-item" key={todo.id}>
+                    <h3>{todo.title}</h3>
+                    <p>{todo.content}</p>
+                    <div className="btn-set">
+                      <button
+                        className="delete-btn"
+                        onClick={() => clickDeleteBtn(todo.id)}
+                      >
+                        삭제하기
+                      </button>
+                      <button
+                        className="cancel-btn"
+                        onClick={() => clickCancelBtn(todo.id)}
+                      >
+                        취소
+                      </button>
+                    </div>
+                  </li>
+                );
+              } else {
+                return null;
+              }
+            })}
+          </ul>
         </div>
       </div>
 
