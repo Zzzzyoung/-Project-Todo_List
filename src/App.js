@@ -91,14 +91,18 @@ function App() {
       <div>
         <div>
           <h2>Working..🔥</h2>
-          {todos.map((item) => {
-            if (item.isDone === false) {
+          {todos.map((todo) => {
+            if (todo.isDone === false) {
               return (
-                <div key={item.id}>
-                  {item.title} <br />
-                  {item.content} <br />
-                  <button onClick={clickDeleteBtn}>삭제하기</button>
-                  <button onClick={clickCompleteBtn}>완료</button>
+                <div key={todo.id}>
+                  {todo.title} <br />
+                  {todo.content} <br />
+                  <button onClick={() => clickDeleteBtn(todo.id)}>
+                    삭제하기
+                  </button>
+                  <button onClick={() => clickCompleteBtn(todo.id)}>
+                    완료
+                  </button>
                 </div>
               );
             } else {
@@ -115,8 +119,10 @@ function App() {
                 <div key={todo.id}>
                   {todo.title} <br />
                   {todo.content} <br />
-                  <button onClick={clickDeleteBtn}>삭제하기</button>
-                  <button onClick={clickCancelBtn}>취소</button>
+                  <button onClick={() => clickDeleteBtn(todo.id)}>
+                    삭제하기
+                  </button>
+                  <button onClick={() => clickCancelBtn(todo.id)}>취소</button>
                 </div>
               );
             } else {
