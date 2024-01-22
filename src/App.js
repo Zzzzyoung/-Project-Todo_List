@@ -27,6 +27,15 @@ function App() {
 
   // 추가하기 버튼
   const clickAddBtn = (event) => {
+    // 유효성 검사
+    if (!title.trim()) {
+      alert("제목을 입력하세요.");
+      return;
+    } else if (title && !content.trim()) {
+      alert("내용을 입력하세요.");
+      return;
+    }
+
     const newTodo = {
       id: todos.length + 1,
       title,
