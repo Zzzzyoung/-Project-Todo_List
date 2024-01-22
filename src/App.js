@@ -4,14 +4,14 @@ function App() {
   const [todos, setTodos] = useState([
     {
       id: 1,
-      title: "밥 먹기",
-      content: "밥을 잘 챙겨먹자",
+      title: "리액트",
+      content: "강의 듣기",
       isDone: false,
     },
     {
       id: 2,
-      title: "리액트",
-      content: "강의 듣기",
+      title: "밥 먹기",
+      content: "밥을 잘 챙겨먹자",
       isDone: true,
     },
   ]);
@@ -23,16 +23,18 @@ function App() {
   const onChangeContentHAndler = (event) => setContent(event.target.value);
 
   // 추가하기 버튼
-  const clickAddBtn = () => {
+  const clickAddBtn = (event) => {
     const newTodo = {
       id: todos.length + 1,
       title,
       content,
+      isDone: false,
     };
 
     setTodos([...todos, newTodo]);
     setTitle("");
     setContent("");
+    event.preventDefault();
   };
 
   // 삭제하기 버튼
@@ -55,7 +57,7 @@ function App() {
 
   // 취소 버튼
   // isDone : true -> false
-  const clickCancleBtn = (id) => {
+  const clickCancelBtn = (id) => {
     const workingTodo = todos.filter((todo) => {
       if (todo.id === id) {
         todo.isDone = !todo.isDone;
@@ -93,8 +95,8 @@ function App() {
             if (item.isDone === false) {
               return (
                 <div key={item.id}>
-                  {item.title}
-                  {item.content}
+                  {item.title} <br />
+                  {item.content} <br />
                   <button onClick={clickDeleteBtn}>삭제하기</button>
                   <button onClick={clickCompleteBtn}>완료</button>
                 </div>
@@ -111,10 +113,10 @@ function App() {
             if (todo.isDone === true) {
               return (
                 <div key={todo.id}>
-                  {todo.title}
-                  {todo.content}
+                  {todo.title} <br />
+                  {todo.content} <br />
                   <button onClick={clickDeleteBtn}>삭제하기</button>
-                  <button onClick={clickCancleBtn}>취소</button>
+                  <button onClick={clickCancelBtn}>취소</button>
                 </div>
               );
             } else {
