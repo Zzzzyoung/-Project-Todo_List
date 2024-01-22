@@ -7,29 +7,18 @@ function Todo({ todo, todos, setTodos }) {
     setTodos(remainTodo);
   };
 
-  // 완료 버튼
-  // isDone : false -> true
-  const clickCompleteBtn = (id) => {
-    const workingTodo = todos.filter((todo) => {
+  // 완료 버튼 - isDone : false -> true
+  // 취소 버튼 - isDone : true -> false
+  const clickUpdateBtn = (id) => {
+    const updateTodo = todos.filter((todo) => {
       if (todo.id === id) {
         todo.isDone = !todo.isDone;
       }
       return todo;
     });
-    setTodos(workingTodo);
+    setTodos(updateTodo);
   };
 
-  // 취소 버튼
-  // isDone : true -> false
-  const clickCancelBtn = (id) => {
-    const workingTodo = todos.filter((todo) => {
-      if (todo.id === id) {
-        todo.isDone = !todo.isDone;
-      }
-      return todo;
-    });
-    setTodos(workingTodo);
-  };
   return (
     <li className="todo-item" key={todo.id}>
       <h3>{todo.title}</h3>
@@ -41,14 +30,14 @@ function Todo({ todo, todos, setTodos }) {
         {todo.isDone ? (
           <button
             className="cancel-btn"
-            onClick={() => clickCancelBtn(todo.id)}
+            onClick={() => clickUpdateBtn(todo.id)}
           >
             취소
           </button>
         ) : (
           <button
             className="complete-btn"
-            onClick={() => clickCompleteBtn(todo.id)}
+            onClick={() => clickUpdateBtn(todo.id)}
           >
             완료
           </button>
