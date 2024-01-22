@@ -8,28 +8,28 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 20px;
   height: 20px;
   font-size: 17px;
   background-color: #003049;
   color: white;
-  padding: 20px;
 }
 
 .submit-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  border: 1px solid;
-  border-radius: 15px;
-  border-color: transparent;
   margin: 10px auto;
-  font-size: 18px;
-  font-weight: 700;
-  background-color: #669bbc;
+  padding: 20px;
   height: 30px;
   max-width: 1000px;
   min-width: 800px;
+  border: 1px solid;
+  border-radius: 15px;
+  border-color: transparent;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: #669bbc;
 }
 
 .input-container {
@@ -39,18 +39,18 @@ header {
 }
 
 input {
+  height: 20px;
   border-radius: 5px;
   border-color: transparent;
-  height: 20px;
 }
 
 .add-btn {
+  padding: 5px 8px;
   border-color: transparent;
   border-radius: 10px;
+  font-size: 15px;
   background-color: #0230499f;
   color: white;
-  font-size: 15px;
-  padding: 5px 8px;
 }
 
 .add-btn:hover {
@@ -74,15 +74,15 @@ input {
 }
 
 .todo-item {
+  padding: 20px;
+  width: 170px;
   border: 1px solid;
   border-radius: 15px;
-  padding: 20px;
-  list-style-type: none;
+  border-color: saddlebrown;
   background-color: #fdf0d5;
   color: black;
-  border-color: saddlebrown;
   box-shadow: 3px 3px 10px gray;
-  width: 170px;
+  list-style-type: none;
 }
 
 .btn-set {
@@ -122,9 +122,9 @@ input {
 .delete-btn,
 .complete-btn,
 .cancel-btn {
-  font-size: 15px;
-  height: 30px;
   padding: 0px 10px;
+  height: 30px;
+  font-size: 15px;
 }
 
 footer {
