@@ -1,6 +1,12 @@
 import React from "react";
 
 function Todo({ todo, todos, setTodos }) {
+  // // 중요성 별표 채우기 함수
+  // const [isStarred, setIsStarred] = useState(false);
+  // const clickStar = () => {
+  //   setIsStarred(!isStarred);
+  // };
+
   // 삭제하기 버튼
   const clickDeleteBtn = (id) => {
     const remainTodo = todos.filter((todo) => todo.id !== id);
@@ -21,6 +27,9 @@ function Todo({ todo, todos, setTodos }) {
 
   return (
     <li className="todo-item" key={todo.id}>
+      {/* {/* <button className="star-btn" onClick={clickStar}>
+        {isStarred ? "★" : "☆"}
+      </button> */}
       <h3>{todo.title}</h3>
       <p>{todo.content}</p>
       <div className="btn-set">
