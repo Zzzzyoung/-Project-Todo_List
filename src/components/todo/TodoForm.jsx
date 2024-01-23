@@ -16,6 +16,7 @@ function TodoForm({
           value={title}
           placeholder="제목을 입력하세요."
           onChange={onChangeTitleHandler}
+          autoFocus
         />
         내용
         <input
