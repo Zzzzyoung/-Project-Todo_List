@@ -20,8 +20,10 @@ JiYoung's To Do List
 
 ## 📌 주요 기능
 - Todo 추가 하기
+- Todo 추가 시 유효성 검사
 - Todo 삭제 하기
 - Todo 완료 상태 변경하기 (완료 ↔ 진행중)
+- Local Storage에 저장
 
 
 ## ✔️ 필수 요구 사항
