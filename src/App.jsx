@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import { Header, Footer } from "./component/Layout";
-import Form from "./component/Form";
-import List from "./component/List";
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
+import TodoController from "./components/todo/TodoController";
 
 function App() {
   // 로컬 스토리지에서 데이터 불러오기
@@ -17,8 +17,7 @@ function App() {
   return (
     <div className="layout">
       <Header />
-      <Form todos={todos} setTodos={setTodos} />
-      <List todos={todos} setTodos={setTodos} />
+      <TodoController todos={todos} setTodos={setTodos} />
       <Footer />
     </div>
   );
