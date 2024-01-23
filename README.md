@@ -35,12 +35,12 @@ JiYoung's To Do List
 
 
 ## 🧩 컴포넌트
-- App
+- App : 주요 컴포넌트
 - component
     - Layout : Header & Footer
-    -  Form : Todolist 추가
-    -  List : 상태 별 Todolist 분
-        - Todo : Todolist 삭제 및 상태 변경 (완료 ↔ 진행중)
+    -  Form : 새로운 Todo 추가
+    -  List : 완료된 항목과 진행 중인 항목 나누어 현재 Todo 목록 표시
+        - Todo : Todo 삭제 및 상태 변경(완료, 취소)
      
 
 ## Create React App 만들기 시작 위한 방법
