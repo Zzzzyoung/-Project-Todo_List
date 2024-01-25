@@ -70,8 +70,10 @@ input {
 }
 
 .todo-item {
+  display: flex;
+  flex-direction: column;
   padding: 20px;
-  width: 170px;
+  width: 200px;
   border: 1px solid;
   border-radius: 15px;
   border-color: saddlebrown;
@@ -81,10 +83,18 @@ input {
   list-style-type: none;
 }
 
+.todo-content {
+  gap: 10px;
+}
+
+.todo-deadline {
+  font-size: 13px;
+}
+
 .btn-set {
   display: flex;
   gap: 10px;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   margin-top: 30px;
 }

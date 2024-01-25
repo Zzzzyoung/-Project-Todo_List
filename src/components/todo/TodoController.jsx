@@ -5,11 +5,14 @@ import TodoList from "./TodoList";
 function TodoController({ todos, setTodos }) {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const [deadline, setDeadline] = useState("");
 
   // 제목
   const onChangeTitleHandler = (event) => setTitle(event.target.value);
   // 내용
   const onChangeContentHandler = (event) => setContent(event.target.value);
+  // 마감일
+  const onChangeDeadlineHandler = (event) => setDeadline(event.target.value);
 
   // 추가하기 버튼
   const clickAddBtn = (event) => {
@@ -27,6 +30,7 @@ function TodoController({ todos, setTodos }) {
         id: todos.length + 1,
         title,
         content,
+        deadline,
         isDone: false,
       };
 
@@ -62,8 +66,10 @@ function TodoController({ todos, setTodos }) {
       <TodoForm
         title={title}
         content={content}
+        deadline={deadline}
         onChangeTitleHandler={onChangeTitleHandler}
         onChangeContentHandler={onChangeContentHandler}
+        onChangeDeadlineHandler={onChangeDeadlineHandler}
         clickAddBtn={clickAddBtn}
       />
       <TodoList
