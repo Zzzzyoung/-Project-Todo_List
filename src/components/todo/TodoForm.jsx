@@ -6,6 +6,8 @@ function TodoForm({
   content,
   onChangeContentHandler,
   clickAddBtn,
+  deadline,
+  onChangeDeadlineHandler,
 }) {
   return (
     <form className="submit-container">
@@ -24,6 +26,11 @@ function TodoForm({
           value={content}
           placeholder="내용을 입력하세요."
           onChange={onChangeContentHandler}
+        />
+        <input
+          type="date"
+          value={deadline}
+          onChange={onChangeDeadlineHandler}
         />
       </div>
       <button type="submit" className="add-btn" onClick={clickAddBtn}>

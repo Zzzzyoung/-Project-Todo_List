@@ -3,7 +3,7 @@ import TodoItem from "./TodoItem";
 
 function TodoList({ headTitle, todos, clickDeleteBtn, clickUpdateBtn }) {
   return (
-    <div className="list-container">
+    <section className="list-container">
       <h2>{headTitle}</h2>
       <ul className="todo-list">
         {todos.map((todo) => (
@@ -15,7 +15,7 @@ function TodoList({ headTitle, todos, clickDeleteBtn, clickUpdateBtn }) {
           />
         ))}
       </ul>
-    </div>
+    </section>
   );
 }
 

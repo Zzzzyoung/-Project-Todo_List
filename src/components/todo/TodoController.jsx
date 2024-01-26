@@ -1,15 +1,23 @@
 import React, { useState } from "react";
 import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
+import TodoSort from "./TodoSort";
 
 function TodoController({ todos, setTodos }) {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const [deadline, setDeadline] = useState("");
+  const [sortOrder, setSortOrder] = useState("asc");
+  const [sortedTodo, setSortedTodo] = useState(todos);
 
   // 제목
   const onChangeTitleHandler = (event) => setTitle(event.target.value);
   // 내용
   const onChangeContentHandler = (event) => setContent(event.target.value);
+  // 마감일
+  const onChangeDeadlineHandler = (event) => setDeadline(event.target.value);
+  // 정렬
+  const onChangeSortOrderHandler = (event) => setSortOrder(event.target.value);
 
   // 추가하기 버튼
   const clickAddBtn = (event) => {
@@ -27,25 +35,46 @@ function TodoController({ todos, setTodos }) {
         id: todos.length + 1,
         title,
         content,
+        deadline,
         isDone: false,
       };
 
-      setTodos([...todos, newTodo]);
+      setSortedTodo([...sortedTodo, newTodo]);
       setTitle("");
       setContent("");
     }
   };
 
+  // 정렬하기
+  const sortTodos = () => {
+    const sortedTodos = [...todos].sort((a, b) => {
+      const deadlineA = new Date(a.deadline);
+      const deadlineB = new Date(b.deadline);
+
+      if (sortOrder === "asc") {
+        return deadlineA - deadlineB;
+      } else {
+        return deadlineB - deadlineA;
+      }
+    });
+
+    setSortedTodo(sortedTodos);
+  };
+
   // 삭제하기 버튼
   const clickDeleteBtn = (id) => {
-    const remainTodo = todos.filter((todo) => todo.id !== id);
-    setTodos(remainTodo);
+    const checkDelete = window.confirm("정말 삭제하시겠습니까?");
+    if (checkDelete) {
+      const remainTodo = sortedTodo.filter((todo) => todo.id !== id);
+      setTodos(remainTodo);
+      setSortedTodo(remainTodo);
+    } else return;
   };
 
   // 완료 버튼 - isDone : false -> true
   // 취소 버튼 - isDone : true -> false
   const clickUpdateBtn = (id) => {
-    const updateTodo = todos.filter((todo) => {
+    const updateTodo = sortedTodo.filter((todo) => {
       if (todo.id === id) {
         todo.isDone = !todo.isDone;
       }
@@ -54,17 +83,24 @@ function TodoController({ todos, setTodos }) {
     setTodos(updateTodo);
   };
 
-  const workingTodos = todos.filter((todo) => !todo.isDone);
-  const doneTodos = todos.filter((todo) => todo.isDone);
+  const workingTodos = sortedTodo.filter((todo) => !todo.isDone);
+  const doneTodos = sortedTodo.filter((todo) => todo.isDone);
 
   return (
     <main>
       <TodoForm
         title={title}
         content={content}
+        deadline={deadline}
         onChangeTitleHandler={onChangeTitleHandler}
         onChangeContentHandler={onChangeContentHandler}
+        onChangeDeadlineHandler={onChangeDeadlineHandler}
         clickAddBtn={clickAddBtn}
+      />
+      <TodoSort
+        sortOrder={sortOrder}
+        sortTodos={sortTodos}
+        onChangeSortOrderHandler={onChangeSortOrderHandler}
       />
       <TodoList
         headTitle="Working..🔥"
