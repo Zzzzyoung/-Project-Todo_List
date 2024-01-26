@@ -63,9 +63,12 @@ function TodoController({ todos, setTodos }) {
 
   // 삭제하기 버튼
   const clickDeleteBtn = (id) => {
-    const remainTodo = sortedTodo.filter((todo) => todo.id !== id);
-    setTodos(remainTodo);
-    setSortedTodo(remainTodo);
+    const checkDelete = window.confirm("정말 삭제하시겠습니까?");
+    if (checkDelete) {
+      const remainTodo = sortedTodo.filter((todo) => todo.id !== id);
+      setTodos(remainTodo);
+      setSortedTodo(remainTodo);
+    } else return;
   };
 
   // 완료 버튼 - isDone : false -> true
