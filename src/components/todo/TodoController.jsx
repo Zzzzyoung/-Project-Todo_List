@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
 import TodoSort from "./TodoSort";
+import uuid from "react-uuid";
 
 function TodoController({ todos, setTodos }) {
   const [title, setTitle] = useState("");
@@ -32,16 +33,18 @@ function TodoController({ todos, setTodos }) {
       return;
     } else {
       const newTodo = {
-        id: todos.length + 1,
+        id: uuid(),
         title,
         content,
         deadline,
         isDone: false,
       };
 
+      setTodos([...sortedTodo, newTodo]);
       setSortedTodo([...sortedTodo, newTodo]);
       setTitle("");
       setContent("");
+      setDeadline("");
     }
   };
 
@@ -58,6 +61,7 @@ function TodoController({ todos, setTodos }) {
       }
     });
 
+    setTodos(sortedTodos);
     setSortedTodo(sortedTodos);
   };
 
@@ -81,6 +85,7 @@ function TodoController({ todos, setTodos }) {
       return todo;
     });
     setTodos(updateTodo);
+    setSortedTodo(updateTodo);
   };
 
   const workingTodos = sortedTodo.filter((todo) => !todo.isDone);
