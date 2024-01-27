@@ -27,6 +27,7 @@ function TodoForm({
           placeholder="내용을 입력하세요."
           onChange={onChangeContentHandler}
         />
+        마감일
         <input
           type="date"
           value={deadline}
