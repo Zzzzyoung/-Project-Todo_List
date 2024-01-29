@@ -17,10 +17,10 @@ function TodoItem({ todo, clickDeleteBtn, clickUpdateBtn }) {
         <div className="todo-content">
           <h3>{todo.title}</h3>
           <p>{todo.content}</p>
-          <p className="todo-deadline">
+          <time className="todo-deadline">
             {formattedDeadline}
             까지
-          </p>
+          </time>
         </div>
 
         <div className="btn-set">
