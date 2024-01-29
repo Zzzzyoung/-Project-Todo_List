@@ -1,6 +1,16 @@
 import React from "react";
 
 function TodoItem({ todo, clickDeleteBtn, clickUpdateBtn }) {
+  const formattedDeadline = new Date(todo.deadline).toLocaleDateString(
+    "ko-KR",
+    {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      weekday: "long",
+    }
+  );
+
   return (
     <li className="todo-item" key={todo.id}>
       <article>
@@ -8,12 +18,7 @@ function TodoItem({ todo, clickDeleteBtn, clickUpdateBtn }) {
           <h3>{todo.title}</h3>
           <p>{todo.content}</p>
           <p className="todo-deadline">
-            {new Date(todo.deadline).toLocaleDateString("ko-KR", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-              weekday: "long",
-            })}
+            {formattedDeadline}
             까지
           </p>
         </div>
