@@ -36,7 +36,7 @@ JiYoung's To Do List
 
 ## 🧩 컴포넌트
 - App : 주요 컴포넌트
-- component
+- components
     - Layout : Header & Footer
     -  Form : 새로운 Todo 추가
     -  List : 완료된 항목과 진행 중인 항목 나누어 현재 Todo 목록 표시
