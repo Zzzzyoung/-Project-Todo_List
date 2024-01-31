@@ -1,4 +1,5 @@
 import React from "react";
+import { SubmitContainer, InputContainer, Input, AddBtn } from "../../Style";
 
 function TodoForm({
   title,
@@ -10,10 +11,10 @@ function TodoForm({
   onChangeDeadlineHandler,
 }) {
   return (
-    <form className="submit-container">
-      <div className="input-container">
+    <SubmitContainer>
+      <InputContainer>
         제목
-        <input
+        <Input
           type="text"
           value={title}
           placeholder="제목을 입력하세요."
@@ -21,23 +22,23 @@ function TodoForm({
           autoFocus
         />
         내용
-        <input
+        <Input
           type="text"
           value={content}
           placeholder="내용을 입력하세요."
           onChange={onChangeContentHandler}
         />
         마감일
-        <input
+        <Input
           type="date"
           value={deadline}
           onChange={onChangeDeadlineHandler}
         />
-      </div>
-      <button type="submit" className="add-btn" onClick={clickAddBtn}>
+      </InputContainer>
+      <AddBtn type="submit" onClick={clickAddBtn}>
         추가하기
-      </button>
-    </form>
+      </AddBtn>
+    </SubmitContainer>
   );
 }
 

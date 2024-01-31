@@ -1,39 +1,47 @@
 import React from "react";
+import {
+  StTodoItem,
+  TodoContent,
+  TodoOnlyContent,
+  TodoDeadline,
+  BtnSet,
+  DeleteBrn,
+  UpdateBtn,
+} from "../../Style";
 
 function TodoItem({ todo, clickDeleteBtn, clickUpdateBtn }) {
-  return (
-    <li className="todo-item" key={todo.id}>
-      <article>
-        <div className="todo-content">
-          <h3>{todo.title}</h3>
-          <p>{todo.content}</p>
-          <p className="todo-deadline">
-            {new Date(todo.deadline).toLocaleDateString("ko-KR", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-              weekday: "long",
-            })}
-            까지
-          </p>
-        </div>
+  const formattedDeadline = new Date(todo.deadline).toLocaleDateString(
+    "ko-KR",
+    {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      weekday: "long",
+    }
+  );
 
-        <div className="btn-set">
-          <button
-            className="delete-btn"
-            onClick={() => clickDeleteBtn(todo.id)}
-          >
+  return (
+    <StTodoItem key={todo.id}>
+      <article>
+        <TodoContent>
+          <h3>{todo.title}</h3>
+          <TodoOnlyContent isDone={todo.isDone}>{todo.content}</TodoOnlyContent>
+          <TodoDeadline>
+            {formattedDeadline}
+            까지
+          </TodoDeadline>
+        </TodoContent>
+
+        <BtnSet>
+          <DeleteBrn onClick={() => clickDeleteBtn(todo.id)}>
             삭제하기
-          </button>
-          <button
-            className="update-btn"
-            onClick={() => clickUpdateBtn(todo.id)}
-          >
+          </DeleteBrn>
+          <UpdateBtn onClick={() => clickUpdateBtn(todo.id)}>
             {todo.isDone ? "취소" : "완료"}
-          </button>
-        </div>
+          </UpdateBtn>
+        </BtnSet>
       </article>
-    </li>
+    </StTodoItem>
   );
 }
 

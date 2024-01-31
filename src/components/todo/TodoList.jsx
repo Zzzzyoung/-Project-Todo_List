@@ -1,11 +1,12 @@
 import React from "react";
 import TodoItem from "./TodoItem";
+import { ListContainer, StTodoList } from "../../Style";
 
 function TodoList({ headTitle, todos, clickDeleteBtn, clickUpdateBtn }) {
   return (
-    <section className="list-container">
+    <ListContainer>
       <h2>{headTitle}</h2>
-      <ul className="todo-list">
+      <StTodoList>
         {todos.map((todo) => (
           <TodoItem
             key={todo.id}
@@ -14,8 +15,8 @@ function TodoList({ headTitle, todos, clickDeleteBtn, clickUpdateBtn }) {
             clickUpdateBtn={clickUpdateBtn}
           />
         ))}
-      </ul>
-    </section>
+      </StTodoList>
+    </ListContainer>
   );
 }
 

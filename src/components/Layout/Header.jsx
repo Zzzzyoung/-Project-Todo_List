@@ -1,4 +1,5 @@
 import React from "react";
+import { StHeader } from "../../Style";
 
 function Header() {
   const today = new Date();
@@ -8,10 +9,10 @@ function Header() {
     .${("0" + today.getDate()).slice(-2)}`;
 
   return (
-    <header>
+    <StHeader>
       <div>JiYoung's To Do List 📝</div>
       <div>{currentDate}</div>
-    </header>
+    </StHeader>
   );
 }
 
