@@ -97,7 +97,7 @@ export const TodoContent = styled.div`
 `;
 
 export const TodoOnlyContent = styled.p`
-  text-decoration: ${(props) => (props.isDone ? "line-through" : "none")};
+  text-decoration: ${(props) => (props.isdone ? "line-through" : "none")};
 `;
 
 export const TodoDeadline = styled.time`
