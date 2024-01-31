@@ -2,6 +2,7 @@ import React from "react";
 import {
   StTodoItem,
   TodoContent,
+  TodoOnlyContent,
   TodoDeadline,
   BtnSet,
   DeleteBrn,
@@ -24,7 +25,7 @@ function TodoItem({ todo, clickDeleteBtn, clickUpdateBtn }) {
       <article>
         <TodoContent>
           <h3>{todo.title}</h3>
-          <p>{todo.content}</p>
+          <TodoOnlyContent isDone={todo.isDone}>{todo.content}</TodoOnlyContent>
           <TodoDeadline>
             {formattedDeadline}
             까지

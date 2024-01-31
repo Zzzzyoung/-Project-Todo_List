@@ -96,6 +96,10 @@ export const TodoContent = styled.div`
   gap: 10px;
 `;
 
+export const TodoOnlyContent = styled.p`
+  text-decoration: ${(props) => (props.isDone ? "line-through" : "none")};
+`;
+
 export const TodoDeadline = styled.time`
   font-size: 13px;
 `;
