@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import "./App.css";
+import GlobalStyle from "./GlobalStyle";
+import { Layout } from "./Style";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import TodoController from "./components/todo/TodoController";
@@ -15,11 +16,14 @@ function App() {
   }, [todos]);
 
   return (
-    <div className="layout">
-      <Header />
-      <TodoController todos={todos} setTodos={setTodos} />
-      <Footer />
-    </div>
+    <>
+      <GlobalStyle />
+      <Layout>
+        <Header />
+        <TodoController todos={todos} setTodos={setTodos} />
+        <Footer />
+      </Layout>
+    </>
   );
 }
 

@@ -1,4 +1,12 @@
 import React from "react";
+import {
+  StTodoItem,
+  TodoContent,
+  TodoDeadline,
+  BtnSet,
+  DeleteBrn,
+  UpdateBtn,
+} from "../../Style";
 
 function TodoItem({ todo, clickDeleteBtn, clickUpdateBtn }) {
   const formattedDeadline = new Date(todo.deadline).toLocaleDateString(
@@ -12,33 +20,27 @@ function TodoItem({ todo, clickDeleteBtn, clickUpdateBtn }) {
   );
 
   return (
-    <li className="todo-item" key={todo.id}>
+    <StTodoItem key={todo.id}>
       <article>
-        <div className="todo-content">
+        <TodoContent>
           <h3>{todo.title}</h3>
           <p>{todo.content}</p>
-          <time className="todo-deadline">
+          <TodoDeadline>
             {formattedDeadline}
             까지
-          </time>
-        </div>
+          </TodoDeadline>
+        </TodoContent>
 
-        <div className="btn-set">
-          <button
-            className="delete-btn"
-            onClick={() => clickDeleteBtn(todo.id)}
-          >
+        <BtnSet>
+          <DeleteBrn onClick={() => clickDeleteBtn(todo.id)}>
             삭제하기
-          </button>
-          <button
-            className="update-btn"
-            onClick={() => clickUpdateBtn(todo.id)}
-          >
+          </DeleteBrn>
+          <UpdateBtn onClick={() => clickUpdateBtn(todo.id)}>
             {todo.isDone ? "취소" : "완료"}
-          </button>
-        </div>
+          </UpdateBtn>
+        </BtnSet>
       </article>
-    </li>
+    </StTodoItem>
   );
 }
 
