@@ -25,10 +25,7 @@ function TodoItem({ todo, clickDeleteBtn, clickUpdateBtn }) {
       <article>
         <TodoContent>
           <h3>{todo.title}</h3>
-          {/* <TodoOnlyContent isdone={todo.isDone}>{todo.content}</TodoOnlyContent>
-          <TodoOnlyContent isdone={todo.isDone.toString()}>{todo.content}</TodoOnlyContent>
-          <TodoOnlyContent isdone={todo.isDone ? "true" : "false"}>{todo.content}</TodoOnlyContent> */}
-          <TodoOnlyContent isdone={todo.isDone ? "true" : undefined}>
+          <TodoOnlyContent $done={todo.isDone ? "true" : undefined}>
             {todo.content}
           </TodoOnlyContent>
           <TodoDeadline>
