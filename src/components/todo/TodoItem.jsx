@@ -7,7 +7,9 @@ import {
   BtnSet,
   DeleteBrn,
   UpdateBtn,
+  TodoItemLink,
 } from "../../Style";
+import { Link } from "react-router-dom";
 
 function TodoItem({ todo, clickDeleteBtn, clickUpdateBtn }) {
   const formattedDeadline = new Date(todo.deadline).toLocaleDateString(
@@ -21,29 +23,36 @@ function TodoItem({ todo, clickDeleteBtn, clickUpdateBtn }) {
   );
 
   return (
-    <StTodoItem key={todo.id}>
-      <article>
-        <TodoContent>
-          <h3>{todo.title}</h3>
-          <TodoOnlyContent $done={todo.isDone ? "true" : undefined}>
-            {todo.content}
-          </TodoOnlyContent>
-          <TodoDeadline>
-            {formattedDeadline}
-            까지
-          </TodoDeadline>
-        </TodoContent>
+    <TodoItemLink to={`/detail/${todo.id}`}>
+      <StTodoItem
+        key={todo.id}
+        // onClick={() => {
+        //   navigate(`/detail/${todo.id}`);
+        // }}
+      >
+        <article>
+          <TodoContent>
+            <h3>{todo.title}</h3>
+            <TodoOnlyContent $done={todo.isDone ? "true" : undefined}>
+              {todo.content}
+            </TodoOnlyContent>
+            <TodoDeadline>
+              {formattedDeadline}
+              까지
+            </TodoDeadline>
+          </TodoContent>
 
-        <BtnSet>
-          <DeleteBrn onClick={() => clickDeleteBtn(todo.id)}>
-            삭제하기
-          </DeleteBrn>
-          <UpdateBtn onClick={() => clickUpdateBtn(todo.id)}>
-            {todo.isDone ? "취소" : "완료"}
-          </UpdateBtn>
-        </BtnSet>
-      </article>
-    </StTodoItem>
+          <BtnSet>
+            <DeleteBrn onClick={() => clickDeleteBtn(todo.id)}>
+              삭제하기
+            </DeleteBrn>
+            <UpdateBtn onClick={() => clickUpdateBtn(todo.id)}>
+              {todo.isDone ? "취소" : "완료"}
+            </UpdateBtn>
+          </BtnSet>
+        </article>
+      </StTodoItem>
+    </TodoItemLink>
   );
 }
 
