@@ -31,6 +31,8 @@ function TodoController({ todos, setTodos }) {
     } else if (title && !content.trim()) {
       alert("내용을 입력하세요.");
       return;
+    } else if (!deadline) {
+      alert("마감일을 입력하세요.");
     } else {
       const newTodo = {
         id: uuid(),

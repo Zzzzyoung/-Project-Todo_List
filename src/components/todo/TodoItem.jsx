@@ -24,12 +24,7 @@ function TodoItem({ todo, clickDeleteBtn, clickUpdateBtn }) {
 
   return (
     <TodoItemLink to={`/detail/${todo.id}`}>
-      <StTodoItem
-        key={todo.id}
-        // onClick={() => {
-        //   navigate(`/detail/${todo.id}`);
-        // }}
-      >
+      <StTodoItem key={todo.id}>
         <article>
           <TodoContent>
             <h3>{todo.title}</h3>
