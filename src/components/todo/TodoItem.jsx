@@ -23,9 +23,9 @@ function TodoItem({ todo, clickDeleteBtn, clickUpdateBtn }) {
   );
 
   return (
-    <TodoItemLink to={`/detail/${todo.id}`}>
-      <StTodoItem key={todo.id}>
-        <article>
+    <StTodoItem key={todo.id}>
+      <article>
+        <TodoItemLink to={`/detail/${todo.id}`}>
           <TodoContent>
             <h3>{todo.title}</h3>
             <TodoOnlyContent $done={todo.isDone ? "true" : undefined}>
@@ -36,18 +36,18 @@ function TodoItem({ todo, clickDeleteBtn, clickUpdateBtn }) {
               까지
             </TodoDeadline>
           </TodoContent>
+        </TodoItemLink>
 
-          <BtnSet>
-            <DeleteBrn onClick={() => clickDeleteBtn(todo.id)}>
-              삭제하기
-            </DeleteBrn>
-            <UpdateBtn onClick={() => clickUpdateBtn(todo.id)}>
-              {todo.isDone ? "취소" : "완료"}
-            </UpdateBtn>
-          </BtnSet>
-        </article>
-      </StTodoItem>
-    </TodoItemLink>
+        <BtnSet>
+          <DeleteBrn onClick={() => clickDeleteBtn(todo.id)}>
+            삭제하기
+          </DeleteBrn>
+          <UpdateBtn onClick={() => clickUpdateBtn(todo.id)}>
+            {todo.isDone ? "취소" : "완료"}
+          </UpdateBtn>
+        </BtnSet>
+      </article>
+    </StTodoItem>
   );
 }
 

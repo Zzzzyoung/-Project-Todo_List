@@ -81,6 +81,8 @@ export const StTodoList = styled.ul`
 
 export const TodoItemLink = styled(Link)`
   text-decoration-line: none;
+  color: black;
+  cursor: pointer;
 `;
 
 export const StTodoItem = styled.li`
@@ -95,7 +97,6 @@ export const StTodoItem = styled.li`
   color: black;
   box-shadow: 3px 3px 10px gray;
   list-style-type: none;
-  cursor: pointer;
 `;
 
 export const TodoContent = styled.div`
