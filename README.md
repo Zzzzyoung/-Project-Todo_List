@@ -5,7 +5,11 @@ JiYoung's To Do List
 ## 👩‍💻 프로젝트 소개
 리액트 hook인 useState를 사용하여 todolist를 작성할 수 있는 사이트 입니다.
 
-![image](https://github.com/sparta-10/-Team_Project-Movie_Site/assets/154482077/620aae26-8556-435a-a6d7-fc452e0281c7)
+![image](https://github.com/Zzzzyoung/nbc-project-todolist/assets/154482077/43c30ab7-e230-4fb2-b09e-1ed5d52e8364)
+
+
+## 🖇️ 배포 주소
+
 
 
 ## ⏲️ 개발 기간
