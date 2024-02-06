@@ -20,7 +20,10 @@ function Router() {
           path="/"
           element={<Home todos={todos} setTodos={setTodos} />}
         ></Route>
-        <Route path="/detail/:id" element={<Detail todos={todos} />}></Route>
+        <Route
+          path="/detail/:id"
+          element={<Detail todos={todos} setTodos={setTodos} />}
+        ></Route>
       </Routes>
     </BrowserRouter>
   );

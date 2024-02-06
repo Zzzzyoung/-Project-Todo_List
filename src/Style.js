@@ -92,9 +92,8 @@ export const StTodoItem = styled.li`
   flex-direction: column;
   padding: 20px;
   width: 200px;
-  border: 1px solid;
+  border: 1px solid saddlebrown;
   border-radius: 15px;
-  border-color: saddlebrown;
   background-color: #fdf0d5;
   color: black;
   box-shadow: 3px 3px 10px gray;
