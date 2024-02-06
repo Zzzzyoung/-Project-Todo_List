@@ -14,10 +14,6 @@ JiYoung's To Do List
 ![image](https://github.com/Zzzzyoung/nbc-project-todolist/assets/154482077/64f7e0cd-acf4-49e9-8cce-b8d536e51db3)
 
 
-## 🖇️ 배포 주소
-
-
-
 ## ⏲️ 개발 기간
 - 2024.01.22(월)
 
