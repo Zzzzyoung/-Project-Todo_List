@@ -6,6 +6,7 @@ JiYoung's To Do List
 리액트 hook인 useState를 사용하여 todolist를 작성할 수 있는 사이트 입니다.
 
 － 홈 화면
+
 ![image](https://github.com/Zzzzyoung/nbc-project-todolist/assets/154482077/43c30ab7-e230-4fb2-b09e-1ed5d52e8364)
 
 － 상세 화면
