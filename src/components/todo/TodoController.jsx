@@ -8,7 +8,7 @@ function TodoController({ todos, setTodos }) {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [deadline, setDeadline] = useState("");
-  const [sortOrder, setSortOrder] = useState("asc");
+  const [sortOrder, setSortOrder] = useState("");
   const [sortedTodo, setSortedTodo] = useState(todos);
 
   // 제목
@@ -52,19 +52,21 @@ function TodoController({ todos, setTodos }) {
 
   // 정렬하기
   const sortTodos = () => {
-    const sortedTodos = [...todos].sort((a, b) => {
-      const deadlineA = new Date(a.deadline);
-      const deadlineB = new Date(b.deadline);
+    if (sortOrder !== "") {
+      const sortedTodos = [...todos].sort((a, b) => {
+        const deadlineA = new Date(a.deadline);
+        const deadlineB = new Date(b.deadline);
 
-      if (sortOrder === "asc") {
-        return deadlineA - deadlineB;
-      } else {
-        return deadlineB - deadlineA;
-      }
-    });
+        if (sortOrder === "asc") {
+          return deadlineA - deadlineB;
+        } else {
+          return deadlineB - deadlineA;
+        }
+      });
 
-    setTodos(sortedTodos);
-    setSortedTodo(sortedTodos);
+      setTodos(sortedTodos);
+      setSortedTodo(sortedTodos);
+    }
   };
 
   // 삭제하기 버튼

@@ -63,6 +63,8 @@ export const AddBtn = styled.button`
 `;
 
 export const SelectBtn = styled.select`
+  width: 85px;
+  height: 23px;
   margin-top: 30px;
   margin-left: 20px;
   cursor: pointer;
