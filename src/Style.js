@@ -121,7 +121,7 @@ export const BtnSet = styled.div`
   margin-top: 30px;
 `;
 
-export const DeleteBrn = styled.button`
+export const DeleteBtn = styled.button`
   padding: 0px 10px;
   height: 30px;
   font-size: 15px;
