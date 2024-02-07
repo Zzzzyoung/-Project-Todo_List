@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { TodoOnlyContent } from "../../Style";
-import { formattedDeadline } from "../common/Date";
+import { formattedDeadline } from "../../util/Date";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 
@@ -73,7 +73,7 @@ function Detail({ todos, setTodos }) {
             </DetailTodoContent>
             <DetailBtnSet>
               <EditBtn onClick={clickEditDoneBtn}>수정 완료</EditBtn>
-              <CancleBtn onClick={() => setIsEditing(false)}>취소</CancleBtn>
+              <CancelBtn onClick={() => setIsEditing(false)}>취소</CancelBtn>
             </DetailBtnSet>
           </>
         ) : (
@@ -205,7 +205,7 @@ const DeleteBtn = styled.button`
   }
 `;
 
-const CancleBtn = styled.button`
+const CancelBtn = styled.button`
   padding: 2px 13px;
   height: 40px;
   font-size: 15px;

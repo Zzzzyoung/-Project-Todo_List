@@ -9,7 +9,7 @@ import {
   UpdateBtn,
   TodoItemLink,
 } from "../../Style";
-import { formattedDeadline } from "../common/Date";
+import { formattedDeadline } from "../../util/Date";
 
 function TodoItem({ todo, clickDeleteBtn, clickUpdateBtn }) {
   const { id, title, content, deadline, isDone } = todo;
