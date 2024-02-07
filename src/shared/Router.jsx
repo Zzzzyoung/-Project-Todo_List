@@ -1,7 +1,7 @@
+import Detail from "components/pages/Detail";
+import Home from "components/pages/Home";
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "../components/pages/Home";
-import Detail from "../components/pages/Detail";
 
 function Router() {
   // 로컬 스토리지에서 데이터 불러오기

@@ -1,8 +1,8 @@
+import { Layout } from "Style";
+import Footer from "components/layout/Footer";
+import Header from "components/layout/Header";
+import TodoController from "components/todo/TodoController";
 import React from "react";
-import { Layout } from "../../Style";
-import Header from "../layout/Header";
-import TodoController from "../todo/TodoController";
-import Footer from "../layout/Footer";
 
 function Home({ todos, setTodos }) {
   return (

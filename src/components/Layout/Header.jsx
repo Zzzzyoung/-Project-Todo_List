@@ -1,5 +1,5 @@
+import { StHeader } from "Style";
 import React from "react";
-import { StHeader } from "../../Style";
 
 function Header() {
   const today = new Date();

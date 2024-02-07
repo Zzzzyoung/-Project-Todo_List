@@ -1,5 +1,5 @@
+import { AddBtn, Input, InputContainer, SubmitContainer } from "Style";
 import React from "react";
-import { SubmitContainer, InputContainer, Input, AddBtn } from "../../Style";
 
 function TodoForm({
   title,

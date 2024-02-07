@@ -1,6 +1,6 @@
 import React from "react";
 import TodoItem from "./TodoItem";
-import { ListContainer, StTodoList } from "../../Style";
+import { ListContainer, StTodoList } from "Style";
 
 function TodoList({ headTitle, todos, clickDeleteBtn, clickUpdateBtn }) {
   return (

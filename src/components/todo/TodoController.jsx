@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import TodoForm from "./TodoForm";
-import TodoList from "./TodoList";
-import TodoSort from "./TodoSort";
+
 import uuid from "react-uuid";
+import TodoForm from "./TodoForm";
+import TodoSort from "./TodoSort";
+import TodoList from "./TodoList";
 
 function TodoController({ todos, setTodos }) {
   const [title, setTitle] = useState("");

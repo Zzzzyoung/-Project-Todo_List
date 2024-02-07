@@ -1,8 +1,9 @@
+import { TodoOnlyContent } from "Style";
 import React, { useState } from "react";
-import { TodoOnlyContent } from "../../Style";
-import { formattedDeadline } from "../../util/Date";
+
 import { Link, useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
+import { formattedDeadline } from "util/Date";
 
 function Detail({ todos, setTodos }) {
   const { id } = useParams();

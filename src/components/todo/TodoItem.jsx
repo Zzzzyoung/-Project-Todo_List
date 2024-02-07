@@ -1,15 +1,15 @@
-import React from "react";
 import {
-  StTodoItem,
-  TodoContent,
-  TodoOnlyContent,
-  TodoDeadline,
   BtnSet,
   DeleteBtn,
-  UpdateBtn,
+  StTodoItem,
+  TodoContent,
+  TodoDeadline,
   TodoItemLink,
-} from "../../Style";
-import { formattedDeadline } from "../../util/Date";
+  TodoOnlyContent,
+  UpdateBtn,
+} from "Style";
+import React from "react";
+import { formattedDeadline } from "util/Date";
 
 function TodoItem({ todo, clickDeleteBtn, clickUpdateBtn }) {
   const { id, title, content, deadline, isDone } = todo;

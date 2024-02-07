@@ -1,5 +1,5 @@
+import { SelectBtn } from "Style";
 import React from "react";
-import { SelectBtn } from "../../Style";
 
 function TodoSort({ sortOrder, sortTodos, onChangeSortOrderHandler }) {
   return (
