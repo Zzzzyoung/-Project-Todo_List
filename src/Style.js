@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Layout = styled.div`
@@ -62,6 +63,8 @@ export const AddBtn = styled.button`
 `;
 
 export const SelectBtn = styled.select`
+  width: 85px;
+  height: 23px;
   margin-top: 30px;
   margin-left: 20px;
   cursor: pointer;
@@ -78,14 +81,19 @@ export const StTodoList = styled.ul`
   gap: 30px;
 `;
 
+export const TodoItemLink = styled(Link)`
+  text-decoration-line: none;
+  color: black;
+  cursor: pointer;
+`;
+
 export const StTodoItem = styled.li`
   display: flex;
   flex-direction: column;
   padding: 20px;
   width: 200px;
-  border: 1px solid;
+  border: 1px solid saddlebrown;
   border-radius: 15px;
-  border-color: saddlebrown;
   background-color: #fdf0d5;
   color: black;
   box-shadow: 3px 3px 10px gray;
@@ -112,7 +120,7 @@ export const BtnSet = styled.div`
   margin-top: 30px;
 `;
 
-export const DeleteBrn = styled.button`
+export const DeleteBtn = styled.button`
   padding: 0px 10px;
   height: 30px;
   font-size: 15px;
