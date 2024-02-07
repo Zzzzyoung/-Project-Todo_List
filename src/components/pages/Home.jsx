@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Layout } from "../../Style";
 import Header from "../layout/Header";
 import TodoController from "../todo/TodoController";
